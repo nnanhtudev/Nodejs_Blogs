@@ -1,12 +1,9 @@
 const express = require("express");
-const routes = express.Router();
+const { getHomePage, test } = require("../controllers/homeControllers");
 
+const routes = express.Router();
 // SETTINGS ROUTERS
-routes.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-routes.get("/test", (req, res) => {
-  res.render("test");
-});
+routes.get("/", getHomePage);
+routes.get("/test", test);
 
 module.exports = routes;
