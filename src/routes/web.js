@@ -1,9 +1,9 @@
 const express = require("express");
-const { getHomePage, test } = require("../controllers/homeControllers");
+const { getHomePage, createUser } = require("../controllers/homeControllers");
 
 const routes = express.Router();
 // SETTINGS ROUTERS
 routes.get("/", getHomePage);
-routes.get("/test", test);
+routes.post("/create-user", createUser);
 
 module.exports = routes;

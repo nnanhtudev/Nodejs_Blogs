@@ -1,9 +1,17 @@
+const connection = require("../config/Database");
 const getHomePage = (req, res) => {
-  res.send("Hello World!");
+  return res.render("home");
+};
+const createUser = (req, res) => {
+  const { email, name, city } = req.body;
+  connection.query(
+    `INSERT INTO Users (email, name, city)
+      VALUES (?, ?, ?);`,
+    [email, name, city],
+    function (err, results) {
+      res.send("Created new User");
+    }
+  );
 };
 
-const test = (req, res) => {
-  res.render("test");
-};
-
-module.exports = { getHomePage, test };
+module.exports = { getHomePage, createUser };

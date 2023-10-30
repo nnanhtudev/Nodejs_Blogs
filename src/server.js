@@ -11,6 +11,13 @@ const port = process.env.PORT || 3000;
 //config template engine
 configViewEngine(app);
 
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.json());
+
 app.use("/", webRoutes);
 // simple query
 connection.query("SELECT * FROM `Users`", function (err, results, fields) {
