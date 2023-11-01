@@ -28,3 +28,6 @@ form {
   background-color: #04aa6d;
   color: white;
 }
+.d-p {
+  display: none;
+}

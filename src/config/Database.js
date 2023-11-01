@@ -1,5 +1,6 @@
 // get the client
-const mysql = require("mysql2");
+require("dotenv").config();
+const mysql = require("mysql2/promise");
 // config database
 // const connection = mysql.createConnection({
 //   host: process.env.DB_HOST,
